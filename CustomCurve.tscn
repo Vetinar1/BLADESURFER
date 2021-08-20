@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 569.984, -265.724, 0, 0, 0, 0, 543.076, -571.81, 0, 0, 0, 0, 1015.66, -556.674, 0, 0, 0, 0, 1121.61, -242.179, 0, 0, 0, 0, 995.478, -253.952, 77.3625, 50.4538, -77.3625, -50.4538, 928.206, -462.494, 60.5445, -5.04538, -60.5445, 5.04538, 707.891, -487.721, 0, 0, 0, 0, 643.983, -270.77, 0, 0, 0, 0, 569.984, -265.724 )
+}
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Path2D
+
+export var is_rail : bool = false
+
+func _ready():
+	var points = curve.tessellate()
+	var polygon = Polygon2D.new()
+	var collpol = CollisionPolygon2D.new()
+	
+	polygon.polygon = points
+	collpol.polygon = points
+	
+	get_parent().call_deferred(\"add_child\", polygon)
+	get_parent().call_deferred(\"add_child\", collpol)
+	
+	if is_rail:
+		get_parent().add_to_group(\"rails\")
+		polygon.color = Color(0, 0, 200)
+	else:
+		polygon.color = Color(200, 200, 0)
+
+"
+
+[node name="Rail" type="StaticBody2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+script = SubResource( 2 )
