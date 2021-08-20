@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 export var is_rail : bool = true
+export var altcolor : bool = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

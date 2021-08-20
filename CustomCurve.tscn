@@ -9,6 +9,7 @@ _data = {
 script/source = "extends Path2D
 
 export var is_rail : bool = false
+export var right : bool = false
 
 func _ready():
 	var points = curve.tessellate()
@@ -23,9 +24,11 @@ func _ready():
 	
 	if is_rail:
 		get_parent().add_to_group(\"rails\")
-		polygon.color = Color(0, 0, 200)
-	else:
-		polygon.color = Color(200, 200, 0)
+		
+		if right:
+			polygon.color = Color(0, 0, 200)
+		else:
+			polygon.color = Color(200, 200, 0)
 
 "
 
