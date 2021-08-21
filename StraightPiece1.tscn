@@ -22,7 +22,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 512, 0, 0, 0, 0, 0, 512, -960, 0, 0, 0, 0, 1216, -960, 0, 0, 0, 0, 1216, -1920, 0, 0, 0, 0, 1792, -1920, 0, 0, 0, 0, 1792, -4864, 0, 0, 0, 0, 2368, -4864, 0, 0, 0, 0, 2368, 0, 0, 0, 0, 0, 512, 0 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=8]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -192, -960, 29.6985, 108.894, -29.6985, -108.894, -416, -1344, -84.8528, 56.5685, 84.8528, -56.5685, -320, -1680, 0, 0, 0, 0, 64, -1696, 0, 0, 0, 0, -392, -1752, 0, 0, 0, 0, -480, -1280, 0, 0, 0, 0, -192, -960 )
@@ -91,7 +91,7 @@ is_rail = true
 blue = true
 
 [node name="Path2D" parent="Rail4" index="0"]
-curve = SubResource( 4 )
+curve = SubResource( 8 )
 
 [node name="Rail5" parent="." instance=ExtResource( 1 )]
 is_rail = true
@@ -121,6 +121,7 @@ curve = SubResource( 7 )
 position = Vector2( 1344, -4864 )
 
 [node name="EntryTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 16 )
 
 [editable path="Rail3"]
 [editable path="Rail"]

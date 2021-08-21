@@ -7,8 +7,11 @@ func _ready():
 	# load level pieces
 	var sp1 = preload("res://StraightPiece1.tscn")
 	var sp2 = preload("res://StraightPiece2.tscn")
+	var lp1 = preload("res://LongPiece1.tscn")
+	var wp1 = preload("res://WidePiece1.tscn")
+	var zp1 = preload("res://Zpiece1.tscn")
 	
-	pieces = [sp1, sp2]
+	pieces = [sp1, sp2, lp1, wp1,  zp1]
 	
 	# load first
 	pieces.shuffle()

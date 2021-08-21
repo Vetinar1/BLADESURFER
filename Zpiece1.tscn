@@ -1,0 +1,172 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://CustomCurve.tscn" type="PackedScene" id=1]
+[ext_resource path="res://EntryTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TimePickup.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1664, -4480, 0, 0, 0, 0, 2624, -3520, 0, 0, 0, 0, 2688, -3520, 0, 0, 0, 0, 2688, -3584, 0, 0, 0, 0, 1728, -4544, 0, 0, 0, 0, 1664, -4480 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -512, -960, 0, 0, 0, 0, -512, -1536, 0, 0, 0, 0, -576, -1536, 0, 0, 0, 0, -576, -960, 0, 0, 0, 0, -512, -960 )
+}
+
+[sub_resource type="Curve2D" id=3]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -512, -2048, 0, 0, 0, 0, -512, -4224, 0, 0, 0, 0, -576, -4224, 0, 0, 0, 0, -576, -2048, 0, 0, 0, 0, -512, -2048 )
+}
+
+[sub_resource type="Curve2D" id=4]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -512, -1856, 0, 0, 0, 0, -256, -1856, 0, 0, 0, 0, -256, -1792, 0, 0, 0, 0, -512, -1792, 0, 0, 0, 0, -512, -1856 )
+}
+
+[sub_resource type="Curve2D" id=5]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2048, -4736, 0, 0, 0, 0, 2112, -4672, 0, 0, 0, 0, 2176, -4672, 0, 0, 0, 0, 2304, -4800, 0, 0, 0, 0, 2304, -4864, 0, 0, 0, 0, 2240, -4928, 0, 0, 0, 0, 2176, -4928, 0, 0, 0, 0, 2048, -4800, 0, 0, 0, 0, 2048, -4736 )
+}
+
+[sub_resource type="Curve2D" id=6]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2160, -4864, 0, 0, 0, 0, 1024, -4864, 0, 0, 0, 0, 1024, -4800, 0, 0, 0, 0, 2096, -4800, 0, 0, 0, 0, 2160, -4864 )
+}
+
+[sub_resource type="Curve2D" id=7]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3320, -2240, -459.98, 14.9831, 459.98, -14.9831, 4352, -1656, -128.854, 236.733, 128.854, -236.733, 5248, -2176, 0, 0, 0, 0, 5384, -2816, 0, 0, 0, 0, 5384, -3008, 0, 0, 0, 0, 5440, -3008, 0, 0, 0, 0, 5440, -1344, 0, 0, 0, 0, 3320, -1344, 0, 0, 0, 0, 3320, -2240 )
+}
+
+[sub_resource type="Curve2D" id=8]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -576, 0, 0, 0, 0, 0, -576, -1664, 0, 0, 0, 0, 0, -1664, 0, 0, 0, 0, 0, -3968, 0, 0, 0, 0, 960, -4864, 0, 0, 0, 0, 2096, -4864, 0, 0, 0, 0, 2176, -4944, 0, 0, 0, 0, 2240, -4944, 0, 0, 0, 0, 2320, -4864, 0, 0, 0, 0, 2320, -4800, 0, 0, 0, 0, 2280, -4760, 0, 0, 0, 0, 3968, -3072, 0, 0, 0, 0, 5376, -3072, 0, 0, 0, 0, 5376, -5056, 0, 0, 0, 0, -1344, -5056, 0, 0, 0, 0, -1344, 0, 0, 0, 0, 0, -576, 0 )
+}
+
+[sub_resource type="Curve2D" id=9]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 512, 0, 0, 0, 0, 0, 512, -1344, 0, 0, 0, 0, 768, -1344, 0, 0, 0, 0, 768, -3840, 0, 0, 0, 0, 1216, -4288, 0, 0, 0, 0, 1856, -4288, 0, 0, 0, 0, 3584, -2560, 0, 0, 0, 0, 3584, -1664, 0, 0, 0, 0, 5704, -1664, 0, 0, 0, 0, 5704, -5056, 0, 0, 0, 0, 6592, -5056, 0, 0, 0, 0, 6592, 0, 0, 0, 0, 0, 512, 0 )
+}
+
+[sub_resource type="Curve2D" id=10]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 4480, -2368, 0, 0, 0, 0, 4416, -2496, 0, 0, 0, 0, 4480, -2624, 0, 0, 0, 0, 4608, -2624, 0, 0, 0, 0, 4672, -2496, 0, 0, 0, 0, 4608, -2368, 0, 0, 0, 0, 4480, -2368 )
+}
+
+[node name="Zpiece1" type="Node2D"]
+
+[node name="Rail4" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail4" index="0"]
+position = Vector2( 448, -320 )
+curve = SubResource( 1 )
+
+[node name="Rail" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail" index="0"]
+position = Vector2( 0, 456 )
+curve = SubResource( 2 )
+
+[node name="Rail2" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail2" index="0"]
+position = Vector2( 576, 328 )
+curve = SubResource( 3 )
+
+[node name="Rail3" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail3" index="0"]
+position = Vector2( 0, 448 )
+curve = SubResource( 4 )
+
+[node name="Rail6" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail6" index="0"]
+curve = SubResource( 5 )
+
+[node name="Rail7" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail7" index="0"]
+curve = SubResource( 6 )
+
+[node name="Rail8" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail8" index="0"]
+position = Vector2( 264, -320 )
+curve = SubResource( 7 )
+
+[node name="Rail9" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail9" index="0"]
+curve = SubResource( 8 )
+
+[node name="Rail5" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail5" index="0"]
+curve = SubResource( 9 )
+
+[node name="Rail10" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail10" index="0"]
+curve = SubResource( 10 )
+
+[node name="TimePickup" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, -1600 )
+
+[node name="TimePickup2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 104, -3816 )
+
+[node name="TimePickup3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3208, -3672 )
+
+[node name="TimePickup4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3360, -3192 )
+
+[node name="TimePickup5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3544, -2728 )
+
+[node name="TimePickup6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5608, -3704 )
+
+[node name="TimePickup7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5600, -4272 )
+
+[node name="TimePickup8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5592, -4800 )
+
+[node name="Entry" type="Position2D" parent="."]
+
+[node name="Exit" type="Position2D" parent="."]
+position = Vector2( 5536, -5056 )
+
+[node name="EntryTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( -40, 8 )
+
+[editable path="Rail4"]
+[editable path="Rail"]
+[editable path="Rail2"]
+[editable path="Rail3"]
+[editable path="Rail6"]
+[editable path="Rail7"]
+[editable path="Rail8"]
+[editable path="Rail9"]
+[editable path="Rail5"]
+[editable path="Rail10"]
