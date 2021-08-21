@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://CustomCurve.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Spaceship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EntryTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TimePickup.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=6]
@@ -64,8 +64,6 @@ blue = true
 
 [node name="Path2D" parent="Rail2" index="0"]
 curve = SubResource( 2 )
-
-[node name="Spaceship" parent="." instance=ExtResource( 2 )]
 
 [node name="Rail3" parent="." instance=ExtResource( 1 )]
 
@@ -135,6 +133,14 @@ position = Vector2( -9280, -2448 )
 
 [node name="TimePickup5" parent="Rail7/Path2D" index="4" instance=ExtResource( 3 )]
 position = Vector2( -9296, -3104 )
+
+[node name="Entry" type="Position2D" parent="."]
+
+[node name="Exit" type="Position2D" parent="."]
+position = Vector2( -8928, -3648 )
+
+[node name="EntryTrigger" parent="Exit" instance=ExtResource( 2 )]
+position = Vector2( 8928, 3672 )
 
 [editable path="Rail6"]
 [editable path="Rail"]
