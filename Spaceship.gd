@@ -140,14 +140,14 @@ func _physics_process(delta):
 
 func _on_LeftWing_body_entered(body):
 	if body.is_in_group("rails"):
-		if body.get_child(0).blue == inverted:
+		if body.blue == inverted:
 			left_magnet = true
 			$Timer.paused = true
 
 
 func _on_RightWing_body_entered(body):
 	if body.is_in_group("rails"):
-		if body.get_child(0).blue != inverted:
+		if body.blue != inverted:
 			right_magnet = true
 			$Timer.paused = true
 		

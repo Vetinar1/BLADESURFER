@@ -33,35 +33,34 @@ scale = Vector2( 6.2761, 5.77002 )
 texture = ExtResource( 4 )
 
 [node name="Rail3" parent="." instance=ExtResource( 2 )]
+is_rail = true
 
 [node name="Path2D" parent="Rail3" index="0"]
 position = Vector2( -48.7352, 67.8056 )
 curve = SubResource( 1 )
-is_rail = true
 
 [node name="Spaceship" parent="." instance=ExtResource( 1 )]
 position = Vector2( 421, 180.593 )
 
 [node name="Rail" parent="." instance=ExtResource( 2 )]
+is_rail = true
 
 [node name="Path2D" parent="Rail" index="0"]
 curve = SubResource( 2 )
-is_rail = true
-blue = true
 
 [node name="Rail2" parent="." instance=ExtResource( 2 )]
+is_rail = true
 
 [node name="Path2D" parent="Rail2" index="0"]
 curve = SubResource( 3 )
-is_rail = true
 
 [node name="Rail4" parent="." instance=ExtResource( 2 )]
+is_rail = true
+blue = true
 
 [node name="Path2D" parent="Rail4" index="0"]
 position = Vector2( 53.9717, -812.749 )
 curve = SubResource( 4 )
-is_rail = true
-blue = true
 
 [node name="TimePickup" parent="." instance=ExtResource( 3 )]
 position = Vector2( 290.033, -89.3052 )
