@@ -4,6 +4,9 @@ var score : float = 0
 var timer_default : float = 1000
 var timer
 
+var ORANGE = Color(200, 200, 0)
+var BLUE = Color(0.1, 0.1, 200)
+
 func _ready():
 	timer = Timer.new()
 	add_child(timer)

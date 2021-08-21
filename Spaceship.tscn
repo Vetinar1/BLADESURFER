@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://satellite_D.png" type="Texture" id=1]
 [ext_resource path="res://Spaceship.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://kenney_simplespace/PNG/Default/ship_F.png" type="Texture" id=6]
 [ext_resource path="res://kenney_simplespace/PNG/Default/ship_B.png" type="Texture" id=7]
 [ext_resource path="res://test_shader.tres" type="Material" id=8]
+[ext_resource path="res://sci-fi-sounds/Audio/impactMetal_000.ogg" type="AudioStream" id=9]
+[ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=10]
 
 [sub_resource type="ParticlesMaterial" id=1]
 lifetime_randomness = 0.57
@@ -28,6 +30,12 @@ scale_random = 0.15
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 17.7498
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 10 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Rotation"
@@ -114,6 +122,7 @@ z_index = 1000
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = ExtResource( 8 )
 margin_left = -3520.0
 margin_top = -2703.0
@@ -134,6 +143,9 @@ position = Vector2( 0, 30.3248 )
 texture = ExtResource( 7 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 0, 0, 1, 1 )
+self_modulate = Color( 100, 100, 100, 1 )
+scale = Vector2( 0.996047, 1 )
 emitting = false
 amount = 20
 speed_scale = 3.0
@@ -155,22 +167,27 @@ zoom = Vector2( 2.5, 2.5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="Panel" type="Panel" parent="Camera2D/CanvasLayer"]
-margin_left = 169.0
-margin_top = 111.0
-margin_right = 366.0
-margin_bottom = 243.0
+[node name="Time" type="Label" parent="Camera2D/CanvasLayer"]
+margin_right = 177.0
+margin_bottom = 35.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 5 )
+text = "123456.123"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/Panel"]
-anchor_right = 0.026
-margin_left = 5.0
-margin_top = 6.0
-margin_right = 69.93
-margin_bottom = 34.0
+[node name="Score" type="Label" parent="Camera2D/CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -356.376
+margin_right = -179.376
+margin_bottom = 35.0
 rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 5 )
+text = "123456.123"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -199,6 +216,10 @@ anims/Rotation2 = SubResource( 4 )
 
 [node name="RotationAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="Collision" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Distort"
 
 [connection signal="body_entered" from="LeftWing" to="." method="_on_LeftWing_body_entered"]
 [connection signal="body_exited" from="LeftWing" to="." method="_on_LeftWing_body_exited"]

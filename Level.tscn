@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://CustomCurve.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Spaceship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level.gd" type="Script" id=3]
-[ext_resource path="res://kenney_patternpack/PNG/Default size/pattern13.png" type="Texture" id=4]
+[ext_resource path="res://texture_03.png" type="Texture" id=4]
+[ext_resource path="res://test_shader.tres" type="Material" id=5]
 
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
@@ -15,14 +16,17 @@ _data = {
 script = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.6, 0.6 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 5120, 5120 )
+modulate = Color( 1, 1, 1, 0.3 )
+motion_mirroring = Vector2( 15360, 15360 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource( 5 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 5120, 5120 )
+region_rect = Rect2( 0, 0, 15360, 15360 )
 
 [node name="Rail" parent="." instance=ExtResource( 1 )]
 

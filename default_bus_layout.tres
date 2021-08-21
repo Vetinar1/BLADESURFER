@@ -1,7 +1,13 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+[gd_resource type="AudioBusLayout" load_steps=3 format=2]
 
 [sub_resource type="AudioEffectPitchShift" id=1]
 resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectDistortion" id=2]
+resource_name = "Distortion"
+pre_gain = -46.73
+drive = 0.6
+post_gain = -3.17
 
 [resource]
 bus/0/volume_db = -3.11736
@@ -13,3 +19,11 @@ bus/1/volume_db = 0.0
 bus/1/send = "Master"
 bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
+bus/2/name = "Distort"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = "Master"
+bus/2/effect/0/effect = SubResource( 2 )
+bus/2/effect/0/enabled = true

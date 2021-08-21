@@ -39,8 +39,16 @@ func _process(delta):
 		$Particles2D.emitting = true
 		$Particles2D.process_material.direction.y = pow((velocity.length() / 800), 2) * 10
 		if left_magnet:
+			if inverted:
+				$Particles2D.modulate = Global.BLUE
+			else:
+				$Particles2D.modulate = Global.ORANGE
 			$Particles2D.process_material.direction.x = 10
 		else:
+			if inverted:
+				$Particles2D.modulate = Global.ORANGE
+			else:
+				$Particles2D.modulate = Global.BLUE
 			$Particles2D.process_material.direction.x = -10
 	else:
 		$Particles2D.emitting = false
@@ -54,7 +62,8 @@ func _physics_process(delta):
 			
 		
 	var railmaxspeed = railmaxspeed_mult * maxspeed
-	$Camera2D/CanvasLayer/Panel/Label.set_text(str(velocity.length(), 2) + "\n" + str(acc) + "\n" + str(Global.timer.time_left) + "\n" + str(floor(Global.score)))
+	$Camera2D/CanvasLayer/Time.set_text("%2.2fs" % Global.timer.time_left)
+	$Camera2D/CanvasLayer/Score.set_text("%5.1f " % Global.score)
 	
 	if Input.is_action_pressed("up"):
 		acc += jerkup * delta + 10
@@ -115,6 +124,8 @@ func _physics_process(delta):
 			if collision.collider.is_in_group("rails") and magnet:
 				velocity = velocity.slide(collision.normal)
 			else:
+				if not $Collision.playing and velocity.dot(lastnormal) < -400: #nqa
+					$Collision.play()
 				acc = 0
 				velocity = velocity.bounce(collision.normal) * 0.3
 				
