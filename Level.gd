@@ -19,9 +19,7 @@ func _ready():
 	
 	
 func load_new():
-	print("loading new")
-	while pieces[0] == live_pieces[-1]:
-		pieces.shuffle()
+	pieces.shuffle()
 		
 	live_pieces.append(pieces[0].instance())
 	live_pieces[-1].position += live_pieces[-2].get_node("Exit").position + live_pieces[-2].position
@@ -29,11 +27,7 @@ func load_new():
 	
 
 func unload_old():
-	print("Unloading old")
-	
 	if len(live_pieces) > 4:
 		live_pieces[0].queue_free()
 		live_pieces.remove(0)
 	
-	print("Loaded: ", len(live_pieces))
-

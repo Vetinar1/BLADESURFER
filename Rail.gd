@@ -30,6 +30,6 @@ func _ready():
 
 func _draw():
 	for i in range(1, len(points)):
-		draw_line(points[i-1] + $Path2D.position, points[i] + $Path2D.position, outline)
+		draw_line(points[i-1] + $Path2D.position, points[i] + $Path2D.position, outline, 5)
 
 
