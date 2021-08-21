@@ -3,8 +3,9 @@
 [ext_resource path="res://Rail.gd" type="Script" id=1]
 
 [sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 543.076, -571.81, 0, 0, 0, 0, 1015.66, -556.674, 0, 0, 0, 0, 1121.61, -242.179, 0, 0, 0, 0, 995.478, -253.952, 77.3625, 50.4538, -77.3625, -50.4538, 928.206, -462.494, 60.5445, -5.04538, -60.5445, 5.04538, 707.891, -487.721, 0, 0, 0, 0, 643.983, -270.77, 0, 0, 0, 0, 569.984, -265.724, 0, 0, 0, 0, 543.076, -571.81 )
+"points": PoolVector2Array(  )
 }
 
 [node name="Rail" type="StaticBody2D"]

@@ -26,6 +26,8 @@ var lastnormal : Vector2
 
 func _ready():
 	$AudioStreamPlayer.stream_paused = false
+	Global.timer.start(Global.timer_default)
+	print(Global.timer.time_left)
 	
 func _process(delta):
 	$engine.modulate.a = acc/1000
@@ -52,7 +54,7 @@ func _physics_process(delta):
 			
 		
 	var railmaxspeed = railmaxspeed_mult * maxspeed
-	$Camera2D/CanvasLayer/Panel/Label.set_text(str(velocity.length(), 2) + "\n" + str(acc) + "\n" + str($Timer.time_left) + "\n" + str(floor(Global.score)))
+	$Camera2D/CanvasLayer/Panel/Label.set_text(str(velocity.length(), 2) + "\n" + str(acc) + "\n" + str(Global.timer.time_left) + "\n" + str(floor(Global.score)))
 	
 	if Input.is_action_pressed("up"):
 		acc += jerkup * delta + 10
@@ -142,27 +144,23 @@ func _on_LeftWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue == inverted:
 			left_magnet = true
-			$Timer.paused = true
+			Global.timer.paused = true
 
 
 func _on_RightWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue != inverted:
 			right_magnet = true
-			$Timer.paused = true
+			Global.timer.paused = true
 		
 		
 func _on_LeftWing_body_exited(body):
 	if body.is_in_group("rails"):
 		left_magnet = false
-		$Timer.paused = false
+		Global.timer.paused = false
 
 
 func _on_RightWing_body_exited(body):
 	if body.is_in_group("rails"):
 		right_magnet = false
-		$Timer.paused = false
-
-
-func _on_Timer_timeout():
-	get_tree().change_scene("res://GameOver.tscn")
+		Global.timer.paused = false

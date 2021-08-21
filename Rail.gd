@@ -8,6 +8,8 @@ func _ready():
 	var polygon = Polygon2D.new()
 	var collpol = CollisionPolygon2D.new()
 	
+	polygon.position += $Path2D.position
+	collpol.position += $Path2D.position
 	polygon.polygon = points
 	collpol.polygon = points
 	

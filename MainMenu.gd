@@ -3,7 +3,7 @@ extends Control
 var level
 
 func _ready():
-	level = preload("res://TestLevel.tscn")
+	level = preload("res://Level.tscn")
 
 
 func _on_ExitButton_pressed():
@@ -11,4 +11,4 @@ func _on_ExitButton_pressed():
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://TestLevel.tscn")
+	get_tree().change_scene("res://Level.tscn")

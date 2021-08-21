@@ -13,6 +13,4 @@ func _on_TimePickup_body_entered(body):
 	hide()
 	$CollisionShape2D.disabled = true
 	
-	var timer = get_node("../Spaceship/Timer")
-	
-	timer.start(timer.time_left + 10)
+	Global.timer.start(Global.timer.time_left + 1)
