@@ -17,28 +17,16 @@ var left_magnet : bool = false
 var magnet : bool = true
 var boosted : bool = true
 
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer.stream_paused = false
+	pass
 	
-func _process(delta):
-	$engine.modulate.a = acc/1000
-	var idx = AudioServer.get_bus_index("Accel")
-	var effect = AudioServer.get_bus_effect(idx, 0)
-	effect.set_pitch_scale(velocity.length()/1200 + 1)
 	
-	if magnet:
-		$Particles2D.emitting = true
-		$Particles2D.process_material.direction.y = pow((velocity.length() / 800), 2) * 10
-		if left_magnet:
-			$Particles2D.process_material.direction.x = 10
-		else:
-			$Particles2D.process_material.direction.x = -10
-	else:
-		$Particles2D.emitting = false
-	
-
 func _physics_process(delta):
 	var railmaxspeed = railmaxspeed_mult * maxspeed
 	
