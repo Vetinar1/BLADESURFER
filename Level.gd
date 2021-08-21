@@ -3,6 +3,8 @@ extends Node2D
 var live_pieces = []
 var pieces
 
+var count = 0
+
 func _ready():
 	# load level pieces
 	var sp1 = preload("res://StraightPiece1.tscn")
@@ -22,15 +24,28 @@ func _ready():
 	
 	
 func load_new():
+	print("loading", count)
+	count += 1
+	print(pieces)
 	pieces.shuffle()
-		
-	live_pieces.append(pieces[0].instance())
+	print(pieces)
+	#live_pieces.append()
+	var new_piece = pieces[0].instance()
+	new_piece.name = "piece" + str(count)
+	print("live", live_pieces)
+	call_deferred("add_child", new_piece)
+	live_pieces.append(new_piece)
 	live_pieces[-1].position += live_pieces[-2].get_node("Exit").position + live_pieces[-2].position
-	call_deferred("add_child", live_pieces[-1])
+	
+	print(live_pieces[-1].position, $Spaceship.position)
 	
 
 func unload_old():
+	print("unloading")
+	print(live_pieces)
 	if len(live_pieces) > 4:
 		live_pieces[0].queue_free()
+		print("-",live_pieces)
 		live_pieces.remove(0)
+		print("--",live_pieces)
 	

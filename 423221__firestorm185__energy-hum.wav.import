@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/423221__firestorm185__energy-hum.wav-4a17030f9e3dff7177a26d1f9ce81927.sample"
+
+[deps]
+
+source_file="res://423221__firestorm185__energy-hum.wav"
+dest_files=[ "res://.import/423221__firestorm185__energy-hum.wav-4a17030f9e3dff7177a26d1f9ce81927.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

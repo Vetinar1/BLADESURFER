@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Retrowave 80's Vaporwave - Slice of Paradise _ Royalty Free No Copyright Background Music.mp3-552a5ea494621235283bc0ec7af6ebb9.mp3str"
+
+[deps]
+
+source_file="res://Retrowave 80's Vaporwave - Slice of Paradise _ Royalty Free No Copyright Background Music.mp3"
+dest_files=[ "res://.import/Retrowave 80's Vaporwave - Slice of Paradise _ Royalty Free No Copyright Background Music.mp3-552a5ea494621235283bc0ec7af6ebb9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

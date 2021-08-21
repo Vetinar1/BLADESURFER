@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+[gd_resource type="AudioBusLayout" load_steps=4 format=2]
 
 [sub_resource type="AudioEffectPitchShift" id=1]
 resource_name = "PitchShift"
@@ -9,13 +9,16 @@ pre_gain = -46.73
 drive = 0.6
 post_gain = -3.17
 
+[sub_resource type="AudioEffectPitchShift" id=3]
+resource_name = "PitchShift"
+
 [resource]
 bus/0/volume_db = -3.11736
 bus/1/name = "Accel"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = 6.02
 bus/1/send = "Master"
 bus/1/effect/0/effect = SubResource( 1 )
 bus/1/effect/0/enabled = true
@@ -27,3 +30,11 @@ bus/2/volume_db = 0.0
 bus/2/send = "Master"
 bus/2/effect/0/effect = SubResource( 2 )
 bus/2/effect/0/enabled = true
+bus/3/name = "Skate"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = "Master"
+bus/3/effect/0/effect = SubResource( 3 )
+bus/3/effect/0/enabled = true

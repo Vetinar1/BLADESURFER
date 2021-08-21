@@ -98,6 +98,10 @@ func _physics_process(delta):
 		velocity = velocity.clamped(railmaxspeed)
 		if velocity.length() > maxspeed:
 			boosted = true
+		var idx = AudioServer.get_bus_index("Skate")
+		var effect = AudioServer.get_bus_effect(idx, 0)
+		effect.set_pitch_scale(velocity.length()/1600 * 0.3 + 1)
+		
 	else:
 		# boosted, not on rail
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
@@ -156,6 +160,7 @@ func _physics_process(delta):
 func _on_LeftWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue == inverted:
+			$skate.play()
 			left_magnet = true
 			Global.timer.paused = true
 
@@ -163,6 +168,7 @@ func _on_LeftWing_body_entered(body):
 func _on_RightWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue != inverted:
+			$skate.play()
 			right_magnet = true
 			Global.timer.paused = true
 		
@@ -171,9 +177,11 @@ func _on_LeftWing_body_exited(body):
 	if body.is_in_group("rails"):
 		left_magnet = false
 		Global.timer.paused = false
+		$skate.stop()
 
 
 func _on_RightWing_body_exited(body):
 	if body.is_in_group("rails"):
 		right_magnet = false
 		Global.timer.paused = false
+		$skate.stop()
