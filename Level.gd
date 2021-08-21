@@ -7,6 +7,7 @@ func _ready():
 	# load level pieces
 	var sp1 = preload("res://StraightPiece1.tscn")
 	var sp2 = preload("res://StraightPiece2.tscn")
+	var lp1 = preload("res://LongPiece1.tscn")
 	
 	pieces = [sp1, sp2]
 	

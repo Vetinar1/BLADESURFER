@@ -19,7 +19,7 @@ var magnet : bool = true
 var boosted : bool = true
 
 export var is_switching : bool = false
-var inverted : bool = false
+var inverted : bool = true
 
 var lastnormal : Vector2
 
@@ -95,15 +95,16 @@ func _physics_process(delta):
 		velocity -= velocity * friction * delta
 		velocity = velocity.clamped(oldspeed)
 		
-		
+	
 	if Input.is_action_pressed("down"):
 		velocity += delta * Vector2.DOWN.rotated(rotation) * 500
-		
-	if Input.is_action_pressed("left"):
-		rotation -= rotspeed * delta
-		
-	if Input.is_action_pressed("right"):
-		rotation += rotspeed * delta
+	
+	if not magnet:	
+		if Input.is_action_pressed("left"):
+			rotation -= rotspeed * delta
+			
+		if Input.is_action_pressed("right"):
+			rotation += rotspeed * delta
 	
 	var collision = move_and_collide(velocity * delta)
 	
@@ -126,7 +127,6 @@ func _physics_process(delta):
 		
 		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
 		
-	
 	
 	if Input.is_action_pressed("switch"):
 		if magnet:

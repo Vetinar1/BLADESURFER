@@ -31,7 +31,7 @@ radius = 17.7498
 
 [sub_resource type="Animation" id=3]
 resource_name = "Rotation"
-length = 0.8
+length = 0.6
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Kufen:rotation_degrees")
 tracks/0/interp = 1
@@ -63,7 +63,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -71,7 +71,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "Rotation2"
-length = 0.8
+length = 0.6
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Kufen:rotation_degrees")
 tracks/0/interp = 1
@@ -103,7 +103,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.8 ),
+"times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -124,7 +124,6 @@ __meta__ = {
 }
 
 [node name="Kufen" type="Sprite" parent="."]
-rotation = 3.14159
 scale = Vector2( 1, 2 )
 texture = ExtResource( 1 )
 
