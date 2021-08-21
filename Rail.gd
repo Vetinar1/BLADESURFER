@@ -4,10 +4,10 @@ export var is_rail : bool = false
 export var blue : bool = false
 
 var points
-onready var outline = Color(255, 255, 255)
+onready var outline = Color(1.0, 1.0, 1.0)
 
 func _ready():
-	points = $Path2D.curve.tessellate(2)
+	points = $Path2D.curve.tessellate()
 	var polygon = Polygon2D.new()
 	var collpol = CollisionPolygon2D.new()
 	

@@ -2,20 +2,20 @@
 
 [ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=1]
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.207852, 0.69746, 1 )
 colors = PoolColorArray( 1, 0, 1, 1, 1, 0.0222549, 0.977745, 1, 1, 0.979215, 0.0207852, 1, 1, 1, 0, 1 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -42,12 +42,12 @@ render_target_update_mode = 3
 gui_disable_input = true
 
 [node name="Label" type="Label" parent="Viewport"]
-material = SubResource( 3 )
+material = SubResource( 1 )
 margin_left = 50.8542
 margin_top = 1.05946
 margin_right = 304.854
 margin_bottom = 132.059
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "bLdeSUrfer"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,7 +57,7 @@ __meta__ = {
 position = Vector2( 161.576, 17.5039 )
 rotation = -1.5708
 scale = Vector2( 0.0212867, 354.147 )
-texture = SubResource( 2 )
+texture = SubResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource( 6 )

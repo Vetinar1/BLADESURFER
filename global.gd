@@ -4,10 +4,11 @@ var score : float = 0
 var timer_default : float = 1000
 var timer
 
-var ORANGE = Color(200, 200, 0)
-var BLUE = Color(0.1, 0.1, 200)
+var ORANGE = Color(255.0/255.0, 150.0/255.0, 25.0/255.0)
+var BLUE = Color(246.0/255, 1.0/255, 157.0/255)
 
 func _ready():
+	randomize()
 	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true

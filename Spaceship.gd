@@ -37,7 +37,7 @@ func _process(delta):
 	
 	if magnet:
 		$Particles2D.emitting = true
-		$Particles2D.process_material.direction.y = pow((velocity.length() / 800), 2) * 10
+		$Particles2D.process_material.direction.y = (velocity.length() / 800) * 10
 		if left_magnet:
 			if inverted:
 				$Particles2D.modulate = Global.BLUE
@@ -62,8 +62,8 @@ func _physics_process(delta):
 			
 		
 	var railmaxspeed = railmaxspeed_mult * maxspeed
-	$Camera2D/CanvasLayer/Time.set_text("%2.2fs" % Global.timer.time_left)
-	$Camera2D/CanvasLayer/Score.set_text("%5.1f " % Global.score)
+	$Camera2D/CanvasLayer/HBoxContainer2/Time.set_text("%2.2f" % Global.timer.time_left)
+	$Camera2D/CanvasLayer/HBoxContainer/Score.set_text("%5.1f" % Global.score)
 	
 	if Input.is_action_pressed("up"):
 		acc += jerkup * delta + 10
@@ -132,8 +132,10 @@ func _physics_process(delta):
 				
 	elif collision:
 		if left_magnet:
+			velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
 			rotation = collision.normal.rotated(- PI / 2).angle() + PI / 2
 		if right_magnet:
+			velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
 			rotation = collision.normal.rotated(PI / 2).angle() + PI / 2
 		
 		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
