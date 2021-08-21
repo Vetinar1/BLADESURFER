@@ -44,6 +44,7 @@ position = Vector2( 421, 180.593 )
 
 [node name="Rail" parent="." instance=ExtResource( 2 )]
 is_rail = true
+blue = true
 
 [node name="Path2D" parent="Rail" index="0"]
 curve = SubResource( 2 )

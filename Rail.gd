@@ -3,8 +3,11 @@ extends StaticBody2D
 export var is_rail : bool = false
 export var blue : bool = false
 
+var points
+var outline
+
 func _ready():
-	var points = $Path2D.curve.tessellate()
+	points = $Path2D.curve.tessellate()
 	var polygon = Polygon2D.new()
 	var collpol = CollisionPolygon2D.new()
 	
@@ -15,13 +18,16 @@ func _ready():
 		add_to_group("rails")
 		
 		if blue:
-			polygon.color = Color(0, 0, 200)
+			outline = Color(0, 0, 200)
 		else:
-			polygon.color = Color(200, 200, 0)
-	
-	add_child(polygon)
+			outline = Color(200, 200, 0)
+
+	#add_child(polygon)
 	add_child(collpol)
 	
-	
+
+func _draw():
+	for i in range(1, len(points)):
+		draw_line(points[i-1], points[i], outline)
 
 
