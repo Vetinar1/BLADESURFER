@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var velocity : Vector2
 export var maxspeed : int = 800
+export var launchvel : float = 500
 export var maxacc : int = 1000
 export var rotspeed : float = 2.5
 export var acc : float = 0
@@ -17,6 +18,10 @@ var left_magnet : bool = false
 var magnet : bool = true
 var boosted : bool = true
 
+export var is_switching : bool = false
+var inverted : bool = false
+
+var lastnormal : Vector2
 
 
 func _ready():
@@ -40,10 +45,14 @@ func _process(delta):
 	
 
 func _physics_process(delta):
-	var railmaxspeed = railmaxspeed_mult * maxspeed
-	
 	magnet = right_magnet or left_magnet
-	$Camera2D/CanvasLayer/Panel/Label.set_text(str(velocity.length(), 2) + "\n" + str(acc))
+	
+	var oldspeed = velocity.length()
+	Global.score += pow(oldspeed / 1000, 2)
+			
+		
+	var railmaxspeed = railmaxspeed_mult * maxspeed
+	$Camera2D/CanvasLayer/Panel/Label.set_text(str(velocity.length(), 2) + "\n" + str(acc) + "\n" + str($Timer.time_left) + "\n" + str(floor(Global.score)))
 	
 	if Input.is_action_pressed("up"):
 		acc += jerkup * delta + 10
@@ -81,8 +90,8 @@ func _physics_process(delta):
 	else:
 		# boosted, not on rail
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
-		velocity = velocity.clamped(railmaxspeed)
 		velocity -= velocity * friction * delta
+		velocity = velocity.clamped(oldspeed)
 		
 		
 	if Input.is_action_pressed("down"):
@@ -95,6 +104,9 @@ func _physics_process(delta):
 		rotation += rotspeed * delta
 	
 	var collision = move_and_collide(velocity * delta)
+	
+	if collision:
+		lastnormal = collision.normal
 	
 	if not magnet:
 		if collision:
@@ -111,25 +123,46 @@ func _physics_process(delta):
 			rotation = collision.normal.rotated(PI / 2).angle() + PI / 2
 		
 		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
+		
+	
+	
+	if Input.is_action_pressed("switch"):
+		if magnet:
+			velocity += lastnormal * launchvel
+		elif not is_switching:
+			if not inverted:
+				$AnimationPlayer.play("Rotation2")
+			else:
+				$AnimationPlayer.play("Rotation")
+				
+			inverted = not inverted
 
 
 func _on_LeftWing_body_entered(body):
 	if body.is_in_group("rails"):
-		if body.get_child(0).right:
+		if body.get_child(0).blue == inverted:
 			left_magnet = true
+			$Timer.paused = true
 
 
 func _on_RightWing_body_entered(body):
 	if body.is_in_group("rails"):
-		if body.get_child(0).right:
+		if body.get_child(0).blue != inverted:
 			right_magnet = true
+			$Timer.paused = true
 		
 		
 func _on_LeftWing_body_exited(body):
 	if body.is_in_group("rails"):
 		left_magnet = false
+		$Timer.paused = false
 
 
 func _on_RightWing_body_exited(body):
 	if body.is_in_group("rails"):
 		right_magnet = false
+		$Timer.paused = false
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://GameOver.tscn")

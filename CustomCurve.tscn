@@ -2,14 +2,14 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 569.984, -265.724, 0, 0, 0, 0, 543.076, -571.81, 0, 0, 0, 0, 1015.66, -556.674, 0, 0, 0, 0, 1121.61, -242.179, 0, 0, 0, 0, 995.478, -253.952, 77.3625, 50.4538, -77.3625, -50.4538, 928.206, -462.494, 60.5445, -5.04538, -60.5445, 5.04538, 707.891, -487.721, 0, 0, 0, 0, 643.983, -270.77, 0, 0, 0, 0, 569.984, -265.724 )
+"points": PoolVector2Array( 0, 0, 0, 0, 569.984, -265.724, 0, 0, 0, 0, 543.076, -571.81, 0, 0, 0, 0, 1015.66, -556.674, 0, 0, 0, 0, 1121.61, -242.179, 0, 0, 0, 0, 995.478, -253.952, 77.3625, 50.4538, -77.3625, -50.4538, 928.206, -462.494, 60.5445, -5.04538, -60.5445, 5.04538, 707.891, -487.721, 0, 0, 0, 0, 643.983, -270.77, 0, 0, 0, 0, 569.984, -265.724, 0, 0, 0, 0, -526.668, 346.645 )
 }
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Path2D
 
 export var is_rail : bool = false
-export var right : bool = false
+export var blue : bool = false
 
 func _ready():
 	var points = curve.tessellate()
@@ -25,7 +25,7 @@ func _ready():
 	if is_rail:
 		get_parent().add_to_group(\"rails\")
 		
-		if right:
+		if blue:
 			polygon.color = Color(0, 0, 200)
 		else:
 			polygon.color = Color(200, 200, 0)
