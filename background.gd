@@ -2,7 +2,7 @@ extends Node2D
 
 onready var speed = 100
 onready var tween = get_node("Tween")
-var tween_values = [0.7, 1]
+var tween_values = [0.3, 1]
 
 func _ready():
 	_start_tween()

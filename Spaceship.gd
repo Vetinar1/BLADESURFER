@@ -55,10 +55,18 @@ func _process(delta):
 	
 
 func _physics_process(delta):
+		
+	$ColorRect.set_rotation(-rotation)
+	$Camera2D/PauseMenu.set_rotation(-rotation)
 	magnet = right_magnet or left_magnet
 	
 	var oldspeed = velocity.length()
 	Global.score += pow(oldspeed / 1000, 2)
+	
+	if Input.is_action_just_pressed("pause"):
+		$Camera2D/PauseMenu.show()
+		$Camera2D/PauseMenu/AudioStreamPlayer.stream_paused = false
+		get_tree().paused = true
 			
 		
 	var railmaxspeed = railmaxspeed_mult * maxspeed
@@ -150,9 +158,10 @@ func _physics_process(delta):
 				rotation = collision.normal.rotated(PI / 2).angle() + PI / 2
 			
 			collision = move_and_collide(velocity.normalized() * collision.remainder.length())
+		move_and_collide(-300 * lastnormal * delta)
 		
-		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
-#		move_and_slide(collision.remainder, Vector2(), false, 10)
+#		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
+		
 		
 	
 	if Input.is_action_pressed("switch"):

@@ -1,7 +1,5 @@
 extends Control
 
-onready var level = preload("res://Level.tscn")
-
 func _ready():
 	pass
 
@@ -11,7 +9,9 @@ func _on_Quit_pressed():
 
 
 func _on_Continue_pressed():
-	pass
+	hide()
+	get_tree().paused = false
+	$AudioStreamPlayer.stream_paused = true
 
 
 func _on_HSlider_value_changed(value):
@@ -26,9 +26,7 @@ func _on_Start_pressed():
 	get_tree().change_scene("res://Level.tscn")
 
 
-func _on_HowToPlay_pressed():
-	$PopupPanel.popup()
-
-
-func _on_Close_pressed():
-	$PopupPanel.hide()
+func _process(delta):
+	if visible == true:
+		if Input.is_action_just_pressed("pause"):
+			_on_Continue_pressed()

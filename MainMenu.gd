@@ -1,14 +1,34 @@
 extends Control
 
-var level
+onready var level = preload("res://Level.tscn")
 
 func _ready():
-	level = preload("res://Level.tscn")
+	pass
 
 
-func _on_ExitButton_pressed():
+func _on_Quit_pressed():
 	get_tree().quit()
 
 
-func _on_StartButton_pressed():
+func _on_Continue_pressed():
+	pass
+
+
+func _on_HSlider_value_changed(value):
+	if value > -40:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
+	else:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+
+
+func _on_Start_pressed():
 	get_tree().change_scene("res://Level.tscn")
+
+
+func _on_HowToPlay_pressed():
+	$PopupPanel.popup()
+
+
+func _on_Close_pressed():
+	$PopupPanel.hide()
