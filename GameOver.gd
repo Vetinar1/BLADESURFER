@@ -6,9 +6,5 @@ func _ready():
 	
 
 
-func _on_RetryButton_pressed():
-	get_tree().change_scene("res://Level.tscn")
-
-
 func _on_MainMenuButton_pressed():
 	get_tree().change_scene("res://GoodMainMenu.tscn")
