@@ -1,5 +1,7 @@
 extends Control
 
+var active = false
+
 func _ready():
 	pass
 
@@ -9,6 +11,7 @@ func _on_Quit_pressed():
 
 
 func _on_Continue_pressed():
+	active = false
 	hide()
 	get_tree().paused = false
 	$AudioStreamPlayer.stream_paused = true
@@ -27,6 +30,13 @@ func _on_Start_pressed():
 
 
 func _process(delta):
-	if visible == true:
-		if Input.is_action_just_pressed("pause"):
+	if not active and Input.is_action_just_pressed("pausebutton"):
+		set_rotation(-get_parent().get_parent().rotation)
+		active = true
+		show()
+		get_tree().paused = true
+		$AudioStreamPlayer.stream_paused = false
+		
+	else:
+		if Input.is_action_just_pressed("pausebutton"):
 			_on_Continue_pressed()

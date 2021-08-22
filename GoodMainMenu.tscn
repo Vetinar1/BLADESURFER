@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://Chill Cyberpunk Synthwave - Afterglow _ Royalty Free No Copyright Background Music.mp3" type="AudioStream" id=3]
 [ext_resource path="res://menu_theme.tres" type="Theme" id=4]
 [ext_resource path="res://background.tscn" type="PackedScene" id=5]
