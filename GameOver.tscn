@@ -1,10 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
+[ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://menu_theme.tres" type="Theme" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 1
+outline_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.207852, 0.69746, 1 )
+colors = PoolColorArray( 1, 0, 1, 1, 1, 0.0222549, 0.977745, 1, 1, 0.979215, 0.0207852, 1, 1, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+void vertex(){
+	VERTEX.x += cos(TIME/5.0 + VERTEX.x + VERTEX.y)*10.0;
+	VERTEX.y += sin(TIME/2.0 + VERTEX.x + VERTEX.y) * 5.0;
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("Viewport")
 
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -15,50 +51,124 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -48.5
-margin_top = -47.0
-margin_right = 48.5
-margin_bottom = 47.0
+margin_left = -129.5
+margin_top = -88.0
+margin_right = 129.5
+margin_bottom = 88.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 90.0
-margin_bottom = 87.0
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 257.0
+margin_bottom = 174.0
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer"]
+margin_left = 54.0
+margin_right = 201.0
+margin_bottom = 172.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameOver" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_right = 83.0
-margin_bottom = 14.0
-text = "Game Over!"
+[node name="Control2" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_right = 147.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="GameOver" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 14.0
+margin_right = 147.0
+margin_bottom = 40.0
+text = "Your Score: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreLabel" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 83.0
-margin_bottom = 32.0
+[node name="ScoreLabel" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 147.0
+margin_bottom = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RetryButton" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 83.0
-margin_bottom = 56.0
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 147.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="RetryButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 147.0
+margin_bottom = 126.0
 text = "Retry"
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_top = 60.0
-margin_right = 83.0
-margin_bottom = 80.0
+[node name="MainMenuButton" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 147.0
+margin_bottom = 158.0
 text = "Main Menu"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[node name="Control3" type="Control" parent="PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 162.0
+margin_right = 147.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Control2" type="Control" parent="PanelContainer/HBoxContainer"]
+margin_left = 205.0
+margin_right = 255.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 350, 350 )
+size_override_stretch = true
+transparent_bg = true
+render_target_v_flip = true
+render_target_update_mode = 3
+gui_disable_input = true
+
+[node name="Label" type="Label" parent="Viewport"]
+material = SubResource( 1 )
+margin_left = 50.8542
+margin_top = 1.05946
+margin_right = 304.854
+margin_bottom = 132.059
+custom_fonts/font = SubResource( 2 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="Viewport"]
+position = Vector2( 161.576, 17.5039 )
+rotation = -1.5708
+scale = Vector2( 0.0212867, 354.147 )
+texture = SubResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 6 )
+margin_left = 150.0
+margin_top = 150.0
+margin_right = 190.0
+margin_bottom = 190.0
+rect_scale = Vector2( 4.92, 5 )
+texture = SubResource( 7 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
