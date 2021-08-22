@@ -135,14 +135,24 @@ func _physics_process(delta):
 				velocity = velocity.bounce(collision.normal) * 0.3
 				
 	elif collision:
-		if left_magnet:
-			velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
-			rotation = collision.normal.rotated(- PI / 2).angle() + PI / 2
-		if right_magnet:
-			velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
-			rotation = collision.normal.rotated(PI / 2).angle() + PI / 2
+		var count = 0
+		while collision:
+			printt(str(count), collision.remainder.length())
+			count += 1
+			if collision.remainder.length() < 1:
+				break
+				
+			if left_magnet:
+				velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
+				rotation = collision.normal.rotated(- PI / 2).angle() + PI / 2
+			if right_magnet:
+				velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
+				rotation = collision.normal.rotated(PI / 2).angle() + PI / 2
+			
+			collision = move_and_collide(velocity.normalized() * collision.remainder.length())
 		
 		velocity -= Vector2(velocity.rotated(-rotation).x, 0).rotated(rotation)
+#		move_and_slide(collision.remainder, Vector2(), false, 10)
 		
 	
 	if Input.is_action_pressed("switch"):

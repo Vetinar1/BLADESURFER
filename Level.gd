@@ -24,28 +24,18 @@ func _ready():
 	
 	
 func load_new():
-	print("loading", count)
 	count += 1
-	print(pieces)
 	pieces.shuffle()
-	print(pieces)
 	#live_pieces.append()
 	var new_piece = pieces[0].instance()
 	new_piece.name = "piece" + str(count)
-	print("live", live_pieces)
 	call_deferred("add_child", new_piece)
 	live_pieces.append(new_piece)
 	live_pieces[-1].position += live_pieces[-2].get_node("Exit").position + live_pieces[-2].position
 	
-	print(live_pieces[-1].position, $Spaceship.position)
-	
 
 func unload_old():
-	print("unloading")
-	print(live_pieces)
 	if len(live_pieces) > 4:
 		live_pieces[0].queue_free()
-		print("-",live_pieces)
 		live_pieces.remove(0)
-		print("--",live_pieces)
 	

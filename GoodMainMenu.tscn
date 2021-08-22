@@ -32,12 +32,11 @@ size_flags_vertical = 3
 [node name="Credits" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -113.0
-margin_right = 445.6
+margin_top = -84.0
+margin_right = 416.0
 rect_scale = Vector2( 0.990986, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Music by Karl Casey @ white bat audio
-Skate sound fx from zapsplat.com
 made by Mono & Vetinari
 for Kenney Game Jam 2021"
 __meta__ = {
@@ -62,7 +61,7 @@ __meta__ = {
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 447.6
-margin_bottom = 100.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -71,22 +70,25 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 16.0
 margin_right = 445.0
+margin_bottom = 16.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 4.0
+margin_top = 20.0
 margin_right = 445.0
-margin_bottom = 32.0
+margin_bottom = 48.0
 
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 148.0
+margin_right = 143.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="Start" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 152.0
-margin_right = 293.0
+margin_left = 147.0
+margin_right = 297.0
 margin_bottom = 28.0
+rect_min_size = Vector2( 150, 0 )
 size_flags_horizontal = 6
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
@@ -97,15 +99,15 @@ __meta__ = {
 }
 
 [node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 297.0
+margin_left = 301.0
 margin_right = 445.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 36.0
+margin_top = 52.0
 margin_right = 445.0
-margin_bottom = 62.0
+margin_bottom = 78.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -135,33 +137,114 @@ margin_right = 445.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 10, 10 )
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 66.0
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 82.0
 margin_right = 445.0
-margin_bottom = 94.0
+margin_bottom = 110.0
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 143.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+
+[node name="HowToPlay" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 147.0
+margin_right = 297.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 150, 0 )
+text = "How To Play"
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 301.0
+margin_right = 445.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 114.0
+margin_right = 445.0
+margin_bottom = 142.0
 
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
-margin_right = 187.0
+margin_right = 143.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 191.0
-margin_right = 254.0
+margin_left = 147.0
+margin_right = 297.0
 margin_bottom = 28.0
+rect_min_size = Vector2( 150, 0 )
 text = "Quit"
 
 [node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 258.0
+margin_left = 301.0
 margin_right = 445.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 98.0
+margin_top = 146.0
 margin_right = 445.0
-margin_bottom = 98.0
+margin_bottom = 146.0
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -239.0
+margin_top = -38.8457
+margin_right = 239.0
+margin_bottom = 175.154
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 476.0
+margin_bottom = 212.0
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer"]
+margin_right = 474.0
+margin_bottom = 171.0
+text = "Use WASD or Arrow keys to Move.
+Use Space to Rotate your Cyberblades.
+Rotate While SUrfing to Launch.
+Pickups grant extra Time.
+Time does not move while Surfing.
+Go fast to Gain Score."
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/VBoxContainer"]
+margin_top = 175.0
+margin_right = 474.0
+margin_bottom = 203.0
+
+[node name="Control" type="Control" parent="PopupPanel/VBoxContainer/HBoxContainer"]
+margin_right = 193.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+
+[node name="Close" type="Button" parent="PopupPanel/VBoxContainer/HBoxContainer"]
+margin_left = 197.0
+margin_right = 277.0
+margin_bottom = 28.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="PopupPanel/VBoxContainer/HBoxContainer"]
+margin_left = 281.0
+margin_right = 474.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Start" to="." method="_on_Start_pressed"]
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer4/HowToPlay" to="." method="_on_HowToPlay_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/HBoxContainer/Close" to="." method="_on_Close_pressed"]

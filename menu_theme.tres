@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=15 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://Symtext.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://1bitplatformerpack/Tiles/Transparent/tile_0102.png" type="Texture" id=2]
@@ -27,17 +27,17 @@ border_color = Color( 1, 1, 1, 1 )
 content_margin_left = 10.0
 content_margin_right = 10.0
 
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+
 [sub_resource type="StyleBoxFlat" id=6]
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxEmpty" id=7]
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxEmpty" id=8]
 
-[sub_resource type="StyleBoxEmpty" id=9]
-
-[sub_resource type="StyleBoxEmpty" id=10]
-
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -47,11 +47,11 @@ border_color = Color( 1, 1, 1, 1 )
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id=10]
 content_margin_left = 10.0
 content_margin_right = 10.0
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -64,13 +64,25 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 shadow_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="DynamicFont" id=13]
 extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 4 )
+default_font = SubResource( 13 )
 BoxContainer/constants/separation = 4
 Button/colors/font_color = Color( 1, 0.0117647, 1, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
@@ -1007,9 +1019,9 @@ HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
 HScrollBar/icons/increment = null
 HScrollBar/icons/increment_highlight = null
-HScrollBar/styles/grabber = SubResource( 6 )
-HScrollBar/styles/grabber_highlight = SubResource( 7 )
-HScrollBar/styles/grabber_pressed = SubResource( 8 )
+HScrollBar/styles/grabber = SubResource( 4 )
+HScrollBar/styles/grabber_highlight = SubResource( 5 )
+HScrollBar/styles/grabber_pressed = SubResource( 6 )
 HScrollBar/styles/scroll = null
 HScrollBar/styles/scroll_focus = null
 HSeparator/constants/separation = 4
@@ -1018,9 +1030,9 @@ HSlider/icons/grabber = ExtResource( 2 )
 HSlider/icons/grabber_disabled = null
 HSlider/icons/grabber_highlight = ExtResource( 2 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 9 )
-HSlider/styles/grabber_area_highlight = SubResource( 10 )
-HSlider/styles/slider = SubResource( 11 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/grabber_area_highlight = SubResource( 8 )
+HSlider/styles/slider = SubResource( 9 )
 HSplitContainer/constants/autohide = 1
 HSplitContainer/constants/separation = 12
 HSplitContainer/icons/grabber = null
@@ -1048,7 +1060,7 @@ Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/fonts/font = null
-Label/styles/normal = SubResource( 12 )
+Label/styles/normal = SubResource( 10 )
 LineEdit/colors/clear_button_color = Color( 0, 0, 0, 1 )
 LineEdit/colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
 LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
@@ -1101,7 +1113,7 @@ OptionButton/styles/hover = null
 OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
 Panel/styles/panel = null
-PanelContainer/styles/panel = SubResource( 5 )
+PanelContainer/styles/panel = SubResource( 11 )
 PopupDialog/styles/panel = null
 PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 1 )
@@ -1129,7 +1141,7 @@ PopupMenu/styles/panel = null
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/pressed = null
 PopupMenu/styles/separator = null
-PopupPanel/styles/panel = null
+PopupPanel/styles/panel = SubResource( 12 )
 ProgressBar/colors/font_color = Color( 0, 0, 0, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
