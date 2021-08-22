@@ -1,17 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://coolfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://TimePickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://CustomCurve.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EntryTrigger.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 200
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -512, 0, 0, 0, 0, 0, -512, -2368, 0, 0, 0, 0, -960, -2368, 0, 0, 0, 0, -960, 0, 0, 0, 0, 0, -512, 0 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=4]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 512, 0, 0, 0, 0, 0, 512, -2368, 0, 0, 0, 0, 960, -2368, 0, 0, 0, 0, 960, 0, 0, 0, 0, 0, 512, 0 )
@@ -25,7 +37,7 @@ margin_top = -648.0
 margin_right = 346.0
 margin_bottom = -422.0
 rect_rotation = 270.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.588235, 0.0980392, 1 )
 text = "bonus"
 __meta__ = {
@@ -38,7 +50,7 @@ margin_top = -1896.0
 margin_right = 1162.0
 margin_bottom = -1670.0
 rect_rotation = 90.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.964706, 0.00392157, 0.615686, 1 )
 text = "bonus"
 __meta__ = {
@@ -48,12 +60,12 @@ __meta__ = {
 [node name="Rail" parent="." instance=ExtResource( 3 )]
 
 [node name="Path2D" parent="Rail" index="0"]
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [node name="Rail2" parent="." instance=ExtResource( 3 )]
 
 [node name="Path2D" parent="Rail2" index="0"]
-curve = SubResource( 2 )
+curve = SubResource( 4 )
 
 [node name="TimePickup2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -96, -416 )
