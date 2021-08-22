@@ -4,19 +4,19 @@
 [ext_resource path="res://TimePickup.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EntryTrigger.tscn" type="PackedScene" id=3]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1216, -1984, 190.797, -0.561231, -190.797, 0.561231, -1664, -1984, -0.183693, 190.858, 0.183693, -190.858, -2048, -2368, 0, 192.057, 0, -192.057, -2048, -2816, -190.273, 0, 190.273, 0, -1664, -3200, 0, 0, 0, 0, -1216, -3200, 0, 0, 0, 0, -1216, -3264, 0, 0, 0, 0, -2112, -3264, 0, 0, 0, 0, -2112, -1920, 0, 0, 0, 0, -1216, -1920, 0, 0, 0, 0, -1216, -1984 )
 }
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=2]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -576, -1088, -0.890899, 197.78, 0.890899, -197.78, -576, -1600, -161.253, -0.890899, 161.253, 0.890899, -192, -1984, 0, 0, 0, 0, 320, -1984, 0, 0, 0, 0, 320, -2048, 0, 0, 0, 0, -1088, -2048, 0, 0, 0, 0, -1088, -1984, 0, 0, 0, 0, -640, -1984, 0, 0, 0, 0, -640, -1088, 0, 0, 0, 0, -576, -1088 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 resource_local_to_scene = true
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, -1664, -128.435, 0.594605, 128.435, -0.594605, 960, -1664, 0.594605, 125.462, -0.594605, -125.462, 1280, -1984, 0.707107, 127.279, -0.707107, -127.279, 1280, -2304, 127.986, 1.41421, -127.986, -1.41421, 960, -2624, 0, 0, 0, 0, 384, -2624, 0, 0, 0, 0, 384, -2688, -126.508, 0.890899, 126.508, -0.890899, 1792, -2688, -0.890899, 128.289, 0.890899, -128.289, 2048, -2944, 0, 0, 0, 0, 2048, -3392, 0, 0, 0, 0, 2112, -3392, 0, 0, 0, 0, 2112, -2624, 0, 0, 0, 0, 1344, -2624, 0, 0, 0, 0, 1344, -1600, 0, 0, 0, 0, 384, -1600, 0, 0, 0, 0, 384, -1664 )
@@ -52,21 +52,21 @@ _data = {
 is_rail = true
 
 [node name="Path2D" parent="Rail3" index="0"]
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [node name="Rail" parent="." instance=ExtResource( 1 )]
 is_rail = true
 blue = true
 
 [node name="Path2D" parent="Rail" index="0"]
-curve = SubResource( 1 )
+curve = SubResource( 2 )
 
 [node name="Rail2" parent="." instance=ExtResource( 1 )]
 is_rail = true
 blue = true
 
 [node name="Path2D" parent="Rail2" index="0"]
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="Rail4" parent="." instance=ExtResource( 1 )]
 

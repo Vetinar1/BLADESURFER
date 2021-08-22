@@ -1,7 +1,7 @@
 extends Node
 
 var score : float = 0
-var timer_default : float = 100
+var timer_default : float = 30
 var timer
 
 var volume = -15
