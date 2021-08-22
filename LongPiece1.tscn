@@ -42,13 +42,13 @@ _data = {
 [sub_resource type="Curve2D" id=7]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -576, 0, 0, 0, 0, 0, -576, -5312, 0, 0, 0, 0, 0, -6528, 0, 0, 0, 0, 0, -7616, 0, 0, 0, 0, 1920, -7616, 0, 0, 0, 0, 1920, -8384, 0, 0, 0, 0, -1408, -8384, 0, 0, 0, 0, -1408, 0, 0, 0, 0, 0, -576, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -576, 640, 0, 0, 0, 0, -576, -5312, 0, 0, 0, 0, 0, -6528, 0, 0, 0, 0, 0, -7616, 0, 0, 0, 0, 1920, -7616, 0, 0, 0, 0, 1920, -8384, 0, 0, 0, 0, -1408, -8384, 0, 0, 0, 0, -1408, 640, 0, 0, 0, 0, -576, 640 )
 }
 
 [sub_resource type="Curve2D" id=8]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 640, 0, 0, 0, 0, 0, 640, -6400, 0, 0, 0, 0, 896, -6656, 0, 0, 0, 0, 2816, -6656, 0, 0, 0, 0, 2816, -8384, 0, 0, 0, 0, 3520, -8384, 0, 0, 0, 0, 3520, 0, 0, 0, 0, 0, 640, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 640, 640, 0, 0, 0, 0, 640, -6400, 0, 0, 0, 0, 896, -6656, 0, 0, 0, 0, 2816, -6656, 0, 0, 0, 0, 2816, -8384, 0, 0, 0, 0, 3520, -8384, 0, 0, 0, 0, 3520, 640, 0, 0, 0, 0, 640, 640 )
 }
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -56,6 +56,7 @@ resource_local_to_scene = true
 extents = Vector2( 592, 144 )
 
 [node name="LongPiece1" type="Node2D"]
+position = Vector2( 0, -640 )
 
 [node name="Rail" parent="." instance=ExtResource( 1 )]
 is_rail = true
@@ -124,9 +125,11 @@ position = Vector2( -464, -4544 )
 position = Vector2( 528, -6232 )
 
 [node name="TimePickup5" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 1432, -7128 )
 
 [node name="Entry" type="Position2D" parent="."]
+position = Vector2( 0, 640 )
 
 [node name="Exit" type="Position2D" parent="."]
 position = Vector2( 2368, -8384 )
@@ -136,7 +139,7 @@ position = Vector2( -16, 0 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntryTrigger"]
-position = Vector2( 48, -160 )
+position = Vector2( 48, 496 )
 shape = SubResource( 9 )
 
 [connection signal="body_entered" from="EntryTrigger" to="EntryTrigger" method="_on_EntryTrigger_body_entered"]

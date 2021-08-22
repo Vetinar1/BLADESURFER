@@ -9,6 +9,9 @@ func _ready():
 	temp_seed = randi()%999999
 	$PanelContainer/VBoxContainer/HBoxContainer5/Seed.text = str(temp_seed)
 	
+	$PanelContainer/VBoxContainer/HBoxContainer/HSlider.value = Global.volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), Global.volume)
+	
 
 
 func _on_Quit_pressed():
@@ -22,6 +25,9 @@ func _on_HSlider_value_changed(value):
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+		
+	Global.volume = value
+	
 
 
 func _on_Start_pressed():

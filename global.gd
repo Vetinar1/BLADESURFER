@@ -4,6 +4,8 @@ var score : float = 0
 var timer_default : float = 100
 var timer
 
+var volume = -15
+
 var ORANGE = Color(255.0/255.0, 150.0/255.0, 25.0/255.0)
 var BLUE = Color(246.0/255, 1.0/255, 157.0/255)
 
