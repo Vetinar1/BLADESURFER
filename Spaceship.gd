@@ -66,11 +66,13 @@ func _physics_process(delta):
 	$Camera2D/CanvasLayer/HBoxContainer/Score.set_text("%5.1f" % Global.score)
 	
 	if Input.is_action_pressed("up"):
+		$Exhaust.emitting = true
 		acc += jerkup * delta + 10
 		acc = min(acc, maxacc)
 		
 		velocity -= Vector2(velocity.rotated(-rotation).x * sidefriction * delta, 0).rotated(rotation)
 	else:
+		$Exhaust.emitting = false
 		acc -= jerkdown * delta
 		acc = max(acc, 0)
 		
@@ -89,11 +91,15 @@ func _physics_process(delta):
 		
 	
 	if not boosted and not magnet:
+		if $skate.playing:
+			$skate.stop()
 		# regular flight
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
 		velocity = velocity.clamped(maxspeed)
 	elif magnet:
 		# on rail
+		if not $skate.playing:
+			$skate.play()
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
 		velocity = velocity.clamped(railmaxspeed)
 		if velocity.length() > maxspeed:
@@ -103,6 +109,8 @@ func _physics_process(delta):
 		effect.set_pitch_scale(velocity.length()/1600 * 0.3 + 1)
 		
 	else:
+		if $skate.playing:
+			$skate.stop()
 		# boosted, not on rail
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
 		velocity -= velocity * friction * delta
@@ -157,6 +165,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("switch"):
 		if magnet:
+			$launch.play()
 			velocity += lastnormal * launchvel
 		elif not is_switching:
 			if not inverted:
@@ -170,7 +179,6 @@ func _physics_process(delta):
 func _on_LeftWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue == inverted:
-			$skate.play()
 			left_magnet = true
 			Global.timer.paused = true
 
@@ -178,7 +186,6 @@ func _on_LeftWing_body_entered(body):
 func _on_RightWing_body_entered(body):
 	if body.is_in_group("rails"):
 		if body.blue != inverted:
-			$skate.play()
 			right_magnet = true
 			Global.timer.paused = true
 		

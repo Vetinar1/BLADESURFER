@@ -61,7 +61,7 @@ __meta__ = {
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 447.6
-margin_bottom = 164.0
+margin_bottom = 132.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -70,14 +70,12 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 16.0
 margin_right = 445.0
-margin_bottom = 16.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 20.0
+margin_top = 4.0
 margin_right = 445.0
-margin_bottom = 48.0
+margin_bottom = 32.0
 
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 143.0
@@ -105,9 +103,9 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 52.0
+margin_top = 36.0
 margin_right = 445.0
-margin_bottom = 78.0
+margin_bottom = 62.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,9 +136,9 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 10, 10 )
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 82.0
+margin_top = 66.0
 margin_right = 445.0
-margin_bottom = 110.0
+margin_bottom = 94.0
 
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
 margin_right = 143.0
@@ -161,9 +159,9 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 114.0
+margin_top = 98.0
 margin_right = 445.0
-margin_bottom = 142.0
+margin_bottom = 126.0
 
 [node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
 margin_right = 143.0
@@ -184,9 +182,9 @@ margin_bottom = 28.0
 size_flags_horizontal = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 146.0
+margin_top = 130.0
 margin_right = 445.0
-margin_bottom = 146.0
+margin_bottom = 130.0
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 anchor_left = 0.5
