@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GameOver.gd" type="Script" id=1]
 [ext_resource path="res://BLADRMF_.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://menu_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Retrowave 80's Vaporwave - Slice of Paradise _ Royalty Free No Copyright Background Music.mp3" type="AudioStream" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -88,6 +89,7 @@ margin_top = 14.0
 margin_right = 147.0
 margin_bottom = 40.0
 text = "Your Score: "
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,6 +98,7 @@ __meta__ = {
 margin_top = 44.0
 margin_right = 147.0
 margin_bottom = 70.0
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,6 +172,10 @@ stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

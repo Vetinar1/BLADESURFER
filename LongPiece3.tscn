@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://CustomCurve.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TimePickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EntryTrigger.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 512, -1088, 0, 0, 0, 0, -1472, -3072, 0, 0, 0, 0, -1408, -3136, 0, 0, 0, 0, 576, -1152, 0, 0, 0, 0, 512, -1088 )
+}
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1856, -2880, 0, 0, 0, 0, -1856, -4416, 0, 0, 0, 0, -1920, -4416, 0, 0, 0, 0, -1920, -2880, 0, 0, 0, 0, -1856, -2880 )
+}
+
+[sub_resource type="Curve2D" id=3]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1472, -4800, 0, 0, 0, 0, 256, -4800, 0, 0, 0, 0, 256, -4864, 0, 0, 0, 0, -1472, -4864, 0, 0, 0, 0, -1472, -4800 )
+}
+
+[sub_resource type="Curve2D" id=4]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2568, -2120, 0, 0, 0, 0, 2632, -2056, 0, 0, 0, 0, 3576, -3016, 0, 0, 0, 0, 3512, -3080, 0, 0, 0, 0, 2568, -2120 )
+}
+
+[sub_resource type="Curve2D" id=5]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -512, 0, 0, 0, 0, 0, -512, -1920, 0, 0, 0, 0, -1408, -2816, 0, 0, 0, 0, -1984, -2816, 0, 0, 0, 0, -1984, -4480, 0, 0, 0, 0, -1472, -4928, 0, 0, 0, 0, 320, -4928, 0, 0, 0, 0, 2176, -3072, 0, 0, 0, 0, 2688, -3072, 0, 0, 0, 0, 3008, -3392, 0, 0, 0, 0, 3008, -5424, 0, 0, 0, 0, 1200, -5424, 0, 0, 0, 0, 1200, -6720, 0, 0, 0, 0, 960, -6720, 0, 0, 0, 0, 960, -7168, 0, 0, 0, 0, -2688, -7168, 0, 0, 0, 0, -2688, 0, 0, 0, 0, 0, -512, 0 )
+}
+
+[sub_resource type="Curve2D" id=6]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 512, 0, 0, 0, 0, 0, 512, -1024, 0, 0, 0, 0, 640, -1152, 0, 0, 0, 0, -1408, -3200, 0, 0, 0, 0, -1408, -4160, 0, 0, 0, 0, -1152, -4416, 0, 0, 0, 0, -64, -4416, 0, 0, 0, 0, 2368, -1984, 0, 0, 0, 0, 2464, -1984, 0, 0, 0, 0, 2464, -2176, 0, 0, 0, 0, 2528, -2176, 0, 0, 0, 0, 2528, -1984, 0, 0, 0, 0, 2616, -1984, 0, 0, 0, 0, 3648, -3008, 0, 0, 0, 0, 3648, -5296, 0, 0, 0, 0, 3664, -5296, 0, 0, 0, 0, 3664, -6160, 0, 0, 0, 0, 1984, -6160, 0, 0, 0, 0, 1984, -7168, 0, 0, 0, 0, 4544, -7168, 0, 0, 0, 0, 4544, 0, 0, 0, 0, 0, 512, 0 )
+}
+
+[sub_resource type="Curve2D" id=7]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3584, -5312, 1.12246, 126.838, -1.12246, -126.838, 3584, -5760, 130.206, 1.12246, -130.206, -1.12246, 3328, -6016, 81.6577, -0.749154, -81.6577, 0.749154, 3200, -6016, 0, 0, 0, 0, 3008, -5888, 0, 0, 0, 0, 2944, -5888, 0, 0, 0, 0, 2944, -6016, 0, 0, 0, 0, 2304, -6016, 0, 0, 0, 0, 2304, -5888, 0, 0, 0, 0, 2240, -5888, 57.0175, 50.7812, -57.0175, -50.7812, 2176, -5952, 0, 0, 0, 0, 1856, -6080, 0, 0, 0, 0, 1856, -6144, 0, 0, 0, 0, 3648, -6144, 0, 0, 0, 0, 3648, -5312, 0, 0, 0, 0, 3584, -5312 )
+}
+
+[sub_resource type="Curve2D" id=8]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2944, -5696, 90.8168, -2.52269, -90.8168, 2.52269, 2688, -5504, 95.0213, -0.840896, -95.0213, 0.840896, 2496, -5504, 0, 0, 0, 0, 2272, -5696, 0, 0, 0, 0, 2208, -5696, 0, 0, 0, 0, 2208, -5504, 0, 0, 0, 0, 1280, -5504, 0, 0, 0, 0, 1280, -5952, 0, 0, 0, 0, 1728, -5952, 0, 0, 0, 0, 1728, -6016, 42.4743, 65.1273, -42.4743, -65.1273, 1600, -6208, 2.83162, 86.8364, -2.83162, -86.8364, 1472, -6592, 0, 0, 0, 0, 1472, -6720, 0, 0, 0, 0, 1216, -6720, 0, 0, 0, 0, 1216, -5440, 0, 0, 0, 0, 3008, -5440, 0, 0, 0, 0, 3008, -5696, 0, 0, 0, 0, 2944, -5696 )
+}
+
+[sub_resource type="Curve2D" id=9]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2320, -5888, 0, 0, 0, 0, 2320, -6000, 0, 0, 0, 0, 2928, -6000, 0, 0, 0, 0, 2928, -5888, 0, 0, 0, 0, 2320, -5888 )
+}
+
+[sub_resource type="Curve2D" id=10]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1296, -5936, -127.477, -0.66742, 127.477, 0.66742, 1728, -5936, 0, -45.3846, 0, 45.3846, 2192, -5696, 0, 0, 0, 0, 2192, -5520, 0, 0, 0, 0, 1296, -5520, 0, 0, 0, 0, 1296, -5936 )
+}
+
+[node name="LongPiece3" type="Node2D"]
+
+[node name="Rail" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail" index="0"]
+curve = SubResource( 1 )
+
+[node name="Rail4" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail4" index="0"]
+position = Vector2( 1848, -968 )
+curve = SubResource( 1 )
+
+[node name="Rail2" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail2" index="0"]
+curve = SubResource( 2 )
+
+[node name="Rail3" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail3" index="0"]
+curve = SubResource( 3 )
+
+[node name="Rail5" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail5" index="0"]
+curve = SubResource( 4 )
+
+[node name="Rail6" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail6" index="0"]
+curve = SubResource( 5 )
+
+[node name="Rail7" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail7" index="0"]
+curve = SubResource( 6 )
+
+[node name="Rail8" parent="." instance=ExtResource( 1 )]
+is_rail = true
+blue = true
+
+[node name="Path2D" parent="Rail8" index="0"]
+curve = SubResource( 7 )
+
+[node name="Rail9" parent="." instance=ExtResource( 1 )]
+is_rail = true
+
+[node name="Path2D" parent="Rail9" index="0"]
+curve = SubResource( 8 )
+
+[node name="Rail10" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail10" index="0"]
+curve = SubResource( 9 )
+
+[node name="Rail11" parent="." instance=ExtResource( 1 )]
+
+[node name="Path2D" parent="Rail11" index="0"]
+curve = SubResource( 10 )
+
+[node name="Entry" type="Position2D" parent="."]
+
+[node name="TimePickup" parent="." instance=ExtResource( 2 )]
+position = Vector2( 248, -4464 )
+
+[node name="TimePickup2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1520, -4552 )
+
+[node name="TimePickup3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1624, -3192 )
+
+[node name="TimePickup4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2496, -2384 )
+
+[node name="TimePickup5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2264, -5800 )
+
+[node name="TimePickup6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1784, -6072 )
+
+[node name="TimePickup7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2968, -5800 )
+
+[node name="Exit" type="Position2D" parent="."]
+position = Vector2( 1472, -7168 )
+
+[node name="EntryTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 16 )
+
+[editable path="Rail"]
+[editable path="Rail4"]
+[editable path="Rail2"]
+[editable path="Rail3"]
+[editable path="Rail5"]
+[editable path="Rail6"]
+[editable path="Rail7"]
+[editable path="Rail8"]
+[editable path="Rail9"]
+[editable path="Rail10"]
+[editable path="Rail11"]
