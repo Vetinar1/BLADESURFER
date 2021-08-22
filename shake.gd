@@ -9,13 +9,11 @@ func _ready():
 	camera = get_parent().get_node("Camera2D")
 	
 func shake(time):
-	print("shake?")
 	active = true
 	duration = time
 
 func _process(delta):
 	if active:
-		print(duration)
 		duration -= delta
 		
 		if duration > 0:

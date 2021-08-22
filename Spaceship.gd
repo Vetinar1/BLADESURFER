@@ -11,6 +11,9 @@ export var jerkdown : float = 4000
 export var friction : float = 0.5
 export var sidefriction : float = 0.1
 
+var old_time
+var new_time
+
 var railmaxspeed_mult : float = 2
 
 var right_magnet : bool = false
@@ -27,13 +30,22 @@ var lastnormal : Vector2
 func _ready():
 	$AudioStreamPlayer.stream_paused = false
 	Global.timer.start(Global.timer_default)
-	print(Global.timer.time_left)
 	
 func _process(delta):
 	var idx = AudioServer.get_bus_index("Accel")
 	var effect = AudioServer.get_bus_effect(idx, 0)
 	effect.set_pitch_scale(velocity.length()/1200 + 1)
 	
+	
+	new_time = Global.timer.time_left
+	if new_time < 3 and old_time > 3:
+		$warning.play()
+	if new_time < 2 and old_time > 2:
+		$warning.play()
+	if new_time < 1 and old_time > 1:
+		$warning.play()
+	
+		
 	if magnet:
 		$Particles2D.emitting = true
 		$Particles2D.process_material.direction.y = (velocity.length() / 800) * 10
@@ -51,6 +63,7 @@ func _process(delta):
 			$Particles2D.process_material.direction.x = -10
 	else:
 		$Particles2D.emitting = false
+	old_time = Global.timer.time_left
 	
 
 func _physics_process(delta):
