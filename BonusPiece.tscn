@@ -124,9 +124,9 @@ position = Vector2( 88, -1952 )
 [node name="Entry" type="Position2D" parent="."]
 
 [node name="Exit" type="Position2D" parent="."]
+position = Vector2( 0, -2368 )
 
 [node name="EntryTrigger" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 16 )
 
 [editable path="Rail"]
 [editable path="Rail2"]

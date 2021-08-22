@@ -16,8 +16,10 @@ func _ready():
 	var zp1 = preload("res://Zpiece1.tscn")
 	var pp1 = preload("res://PipePiece1.tscn")
 	var bp1 = preload("res://BonusPiece.tscn")
+	var shp1 = preload("res://ShortPiece1.tscn")
+	var shp2 = preload("res://ShortPiece2.tscn")
 	
-	pieces = [sp2, lp1, wp1, zp1, pp1, lp2, lp3, bp1]
+	pieces = [sp2, lp1, wp1, zp1, pp1, lp2, lp3, bp1, shp1, shp2]
 	
 	# load first
 	pieces.shuffle()
