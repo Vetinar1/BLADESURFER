@@ -30,7 +30,6 @@ func _ready():
 	print(Global.timer.time_left)
 	
 func _process(delta):
-	$engine.modulate.a = acc/1000
 	var idx = AudioServer.get_bus_index("Accel")
 	var effect = AudioServer.get_bus_effect(idx, 0)
 	effect.set_pitch_scale(velocity.length()/1200 + 1)
