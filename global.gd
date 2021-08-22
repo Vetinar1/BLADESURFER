@@ -1,7 +1,7 @@
 extends Node
 
 var score : float = 0
-var timer_default : float = 1
+var timer_default : float = 100
 var timer
 
 var ORANGE = Color(255.0/255.0, 150.0/255.0, 25.0/255.0)
