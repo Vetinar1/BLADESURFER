@@ -106,8 +106,8 @@ func _physics_process(delta):
 		velocity = velocity.clamped(maxspeed)
 	elif magnet:
 		# on rail
-		if velocity.length() > 1400:
-			$SlideShake.shake(0.1)
+#		if velocity.length() > 1400:
+#			$SlideShake.shake(0.1)
 		if not $skate.playing:
 			$skate.play()
 		velocity += delta * Vector2.UP.rotated(rotation) * acc

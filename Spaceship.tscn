@@ -230,7 +230,6 @@ stream = ExtResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 2.5, 2.5 )
-smoothing_enabled = true
 smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
@@ -295,9 +294,6 @@ rect_pivot_offset = Vector2( 2400, 1350 )
 
 [node name="CollisionShake" parent="." instance=ExtResource( 15 )]
 magnitude = 20
-
-[node name="SlideShake" parent="." instance=ExtResource( 15 )]
-magnitude = 5
 
 [connection signal="body_entered" from="LeftWing" to="." method="_on_LeftWing_body_entered"]
 [connection signal="body_exited" from="LeftWing" to="." method="_on_LeftWing_body_exited"]
