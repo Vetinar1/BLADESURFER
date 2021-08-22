@@ -25,10 +25,6 @@ func _on_HSlider_value_changed(value):
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 
 
-func _on_Start_pressed():
-	get_tree().change_scene("res://Level.tscn")
-
-
 func _process(delta):
 	if not active and Input.is_action_just_pressed("pausebutton"):
 		set_rotation(-get_parent().get_parent().rotation)
@@ -40,3 +36,8 @@ func _process(delta):
 	else:
 		if Input.is_action_just_pressed("pausebutton"):
 			_on_Continue_pressed()
+
+
+func _on_Back_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://GoodMainMenu.tscn")

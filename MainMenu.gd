@@ -2,16 +2,17 @@ extends Control
 
 onready var level = preload("res://Level.tscn")
 
+var temp_seed
+
 func _ready():
-	pass
+	temp_seed = randi()%999999
+	$PanelContainer/VBoxContainer/HBoxContainer5/Seed.text = str(temp_seed)
+	
 
 
 func _on_Quit_pressed():
 	get_tree().quit()
 
-
-func _on_Continue_pressed():
-	pass
 
 
 func _on_HSlider_value_changed(value):
@@ -23,6 +24,8 @@ func _on_HSlider_value_changed(value):
 
 
 func _on_Start_pressed():
+	seed(int($PanelContainer/VBoxContainer/HBoxContainer5/Seed.text))
+	print(randi())
 	get_tree().change_scene("res://Level.tscn")
 
 

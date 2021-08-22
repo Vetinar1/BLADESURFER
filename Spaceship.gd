@@ -106,6 +106,8 @@ func _physics_process(delta):
 		velocity = velocity.clamped(maxspeed)
 	elif magnet:
 		# on rail
+		if velocity.length() > 1400:
+			$SlideShake.shake(0.1)
 		if not $skate.playing:
 			$skate.play()
 		velocity += delta * Vector2.UP.rotated(rotation) * acc
@@ -147,13 +149,13 @@ func _physics_process(delta):
 			else:
 				if not $Collision.playing and velocity.dot(lastnormal) < -400: #nqa
 					$Collision.play()
+					$CollisionShake.shake(0.2)
 				acc = 0
 				velocity = velocity.bounce(collision.normal) * 0.3
 				
 	elif collision:
 		var count = 0
 		while collision:
-			printt(str(count), collision.remainder.length())
 			count += 1
 			if collision.remainder.length() < 1:
 				break
@@ -173,10 +175,10 @@ func _physics_process(delta):
 		
 	
 	if Input.is_action_pressed("switch"):
-		if magnet:
-			$launch.play()
-			velocity += lastnormal * launchvel
-		elif not is_switching:
+		if not is_switching:
+			if magnet:
+				$launch.play()
+				velocity += lastnormal * launchvel
 			if not inverted:
 				$AnimationPlayer.play("Rotation2")
 			else:
@@ -211,3 +213,4 @@ func _on_RightWing_body_exited(body):
 		right_magnet = false
 		Global.timer.paused = false
 		$skate.stop()
+

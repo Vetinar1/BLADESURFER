@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=2]
+[gd_resource type="Theme" load_steps=18 format=2]
 
 [ext_resource path="res://Symtext.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://1bitplatformerpack/Tiles/Transparent/tile_0102.png" type="Texture" id=2]
@@ -50,6 +50,12 @@ expand_margin_bottom = 5.0
 [sub_resource type="StyleBoxEmpty" id=10]
 content_margin_left = 10.0
 content_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0, 0, 1 )
@@ -1061,19 +1067,19 @@ Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/fonts/font = null
 Label/styles/normal = SubResource( 10 )
-LineEdit/colors/clear_button_color = Color( 0, 0, 0, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
-LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/clear_button_color = Color( 1, 0.0117647, 1, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 0.0117647, 1, 1 )
+LineEdit/colors/cursor_color = Color( 1, 0.0117647, 1, 1 )
+LineEdit/colors/font_color = Color( 1, 0.0117647, 1, 1 )
+LineEdit/colors/font_color_selected = Color( 1, 0.368627, 1, 1 )
 LineEdit/colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 LineEdit/colors/read_only = Color( 0, 0, 0, 1 )
-LineEdit/colors/selection_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/selection_color = Color( 1, 1, 1, 1 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
-LineEdit/styles/focus = null
-LineEdit/styles/normal = null
+LineEdit/styles/focus = SubResource( 14 )
+LineEdit/styles/normal = SubResource( 15 )
 LineEdit/styles/read_only = null
 LinkButton/colors/font_color = Color( 0, 0, 0, 1 )
 LinkButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
